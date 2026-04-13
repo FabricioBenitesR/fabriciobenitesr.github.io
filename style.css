@@ -1,36 +1,43 @@
+/* --- VARIABLES DE DISEÑO --- */
 :root {
-    --verde: #1a6b4a;
+    --verde: #1a6b4a;      /* Verde institucional/profesional */
     --verde-claro: #2d9967;
-    --creme: #f7f3ed;
-    --texto: #1c1c1c;
+    --creme: #f7f3ed;      /* Fondo suave para que no canse la vista */
+    --texto: #1c1c1c;      /* Casi negro para buen contraste */
     --blanco: #ffffff;
 }
 
+/* --- ESTILOS BASE --- */
 body {
     font-family: 'DM Sans', sans-serif;
     background: var(--creme);
     color: var(--texto);
     margin: 0;
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
 }
 
+/* --- HEADER --- */
 header {
     background: var(--verde);
-    padding: 3rem 1rem 5rem;
+    padding: 3rem 1rem 6rem; /* Mucho espacio abajo para que la tarjeta pise el fondo */
     text-align: center;
 }
 
 .badge {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.2); /* Blanco transparente */
     color: white;
-    padding: 5px 15px;
+    padding: 6px 16px;
     border-radius: 20px;
     font-size: 0.7rem;
+    font-weight: 500;
     text-transform: uppercase;
+    letter-spacing: 1px; /* Espacio entre letras */
 }
 
+/* --- CONTENEDOR Y TARJETA --- */
 .container {
     max-width: 700px;
-    margin: -4rem auto 2rem;
+    margin: -4rem auto 2rem; /* El margen negativo sube la tarjeta sobre el header */
     padding: 0 1rem;
 }
 
@@ -38,57 +45,132 @@ header {
     background: var(--blanco);
     padding: 2.5rem;
     border-radius: 1.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08); /* Sombra elegante */
 }
 
+/* --- CABECERA DE PERFIL (FLEXBOX) --- */
 .perfil-topo {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    flex-wrap: wrap;
+    display: flex;         /* Alinea foto y texto en fila */
+    gap: 2rem;             /* Separación entre foto y texto */
+    align-items: center;   /* Centra verticalmente */
+    flex-wrap: wrap;       /* Si no hay espacio, se pone uno bajo el otro */
 }
 
 .foto-placeholder {
-    width: 100px; height: 100px;
+    width: 110px;
+    height: 110px;
     background: var(--creme);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 2.5rem; border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border-radius: 1.2rem;
+    border: 3px solid var(--creme);
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem; margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif; /* Fuente elegante con remates */
+    font-size: 1.7rem;
+    margin: 0 0 0.5rem 0;
 }
 
-.subtitulo { color: var(--verde-claro); font-weight: 500; margin-bottom: 1rem; }
+.subtitulo {
+    color: var(--verde-claro);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
 
 .tags span {
     background: var(--creme);
-    font-size: 0.7rem; padding: 4px 10px;
-    border-radius: 10px; margin-right: 5px;
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    border-radius: 30px;
+    margin-right: 8px;
+    color: #555;
 }
 
+/* --- SECCIONES INTERNAS --- */
 .apresentacao {
-    margin: 2rem 0;
-    padding: 1rem;
-    border-left: 4px solid var(--verde-claro);
-    background: #fafafa;
+    margin: 2.5rem 0;
+    padding: 1.2rem 1.5rem;
+    border-left: 5px solid var(--verde-claro); /* Línea decorativa izquierda */
+    background: #fcfcfc;
 }
 
+/* CUADRÍCULA (GRID) */
 .grid-secoes {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
     gap: 1.5rem;
 }
 
+.secao h2 {
+    font-size: 0.8rem;
+    color: var(--verde);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+/* Bloque destacado que ocupa el ancho total */
 .destaque-ufop {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* Se estira de la columna 1 hasta el final */
     background: var(--verde);
     color: white;
-    padding: 1.2rem;
+    padding: 1.5rem;
     border-radius: 1rem;
 }
 
-h2 { font-size: 0.8rem; text-transform: uppercase; color: var(--verde); margin-bottom: 0.5rem; }
+.destaque-ufop strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
 
-footer { text-align: center; font-size: 0.8rem; padding-bottom: 2rem; opacity: 0.6; }
+/* --- PIE DE PÁGINA --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.secao-logos {
+    grid-column: 1 / -1; /* Ocupa todo el ancho */
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-item img {
+    height: 60px; /* Ajusta la altura según los logos */
+    width: auto;
+    filter: grayscale(100%); /* Opcional: los hace blanco y negro para que combinen */
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.logo-item img:hover {
+    filter: grayscale(0%); /* Vuelven a color al pasar el mouse */
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.logo-item span {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--verde);
+}
