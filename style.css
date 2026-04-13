@@ -1,0 +1,94 @@
+:root {
+    --verde: #1a6b4a;
+    --verde-claro: #2d9967;
+    --creme: #f7f3ed;
+    --texto: #1c1c1c;
+    --blanco: #ffffff;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--creme);
+    color: var(--texto);
+    margin: 0;
+}
+
+header {
+    background: var(--verde);
+    padding: 3rem 1rem 5rem;
+    text-align: center;
+}
+
+.badge {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: 700px;
+    margin: -4rem auto 2rem;
+    padding: 0 1rem;
+}
+
+.perfil-card {
+    background: var(--blanco);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.perfil-topo {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.foto-placeholder {
+    width: 100px; height: 100px;
+    background: var(--creme);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem; border-radius: 1rem;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; margin-bottom: 0.5rem;
+}
+
+.subtitulo { color: var(--verde-claro); font-weight: 500; margin-bottom: 1rem; }
+
+.tags span {
+    background: var(--creme);
+    font-size: 0.7rem; padding: 4px 10px;
+    border-radius: 10px; margin-right: 5px;
+}
+
+.apresentacao {
+    margin: 2rem 0;
+    padding: 1rem;
+    border-left: 4px solid var(--verde-claro);
+    background: #fafafa;
+}
+
+.grid-secoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.destaque-ufop {
+    grid-column: 1 / -1;
+    background: var(--verde);
+    color: white;
+    padding: 1.2rem;
+    border-radius: 1rem;
+}
+
+h2 { font-size: 0.8rem; text-transform: uppercase; color: var(--verde); margin-bottom: 0.5rem; }
+
+footer { text-align: center; font-size: 0.8rem; padding-bottom: 2rem; opacity: 0.6; }
