@@ -1,354 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Carlos Fabricio — Perfil Pessoal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --verde: #1a6b4a;
-      --verde-claro: #2d9967;
-      --creme: #f7f3ed;
-      --creme-escuro: #ede7dc;
-      --texto: #1c1c1c;
-      --texto-suave: #5a5a5a;
-      --branco: #ffffff;
-    }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background-color: var(--creme);
-      color: var(--texto);
-      min-height: 100vh;
-    }
-
-    /* ── HEADER ── */
-    header {
-      background-color: var(--verde);
-      padding: 3rem 2rem 5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 300px; height: 300px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-    }
-
-    header::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: -40px;
-      width: 220px; height: 220px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.04);
-    }
-
-    .header-inner {
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.15);
-      color: rgba(255,255,255,0.9);
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.9rem;
-      border-radius: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    /* ── CARD PERFIL ── */
-    .perfil-card {
-      background: var(--branco);
-      border-radius: 1.5rem;
-      max-width: 760px;
-      margin: -3rem auto 0;
-      padding: 2.5rem 2.5rem 2rem;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.09);
-      position: relative;
-      z-index: 2;
-    }
-
-    .perfil-topo {
-      display: flex;
-      align-items: flex-start;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    /* ── FOTO ── */
-    .foto-wrapper {
-      flex-shrink: 0;
-    }
-
-    .foto-wrapper img {
-      width: 120px;
-      height: 120px;
-      border-radius: 1rem;
-      object-fit: cover;
-      display: block;
-      border: 3px solid var(--creme-escuro);
-    }
-
-    .foto-placeholder {
-      width: 120px;
-      height: 120px;
-      border-radius: 1rem;
-      background: var(--creme-escuro);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.8rem;
-      color: var(--verde);
-      border: 3px solid var(--creme-escuro);
-    }
-
-    .foto-label {
-      font-size: 0.68rem;
-      color: var(--texto-suave);
-      text-align: center;
-      margin-top: 0.5rem;
-      font-style: italic;
-    }
-
-    /* ── INFO NOME ── */
-    .perfil-info { flex: 1; min-width: 200px; }
-
-    .perfil-info h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.75rem;
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--texto);
-      margin-bottom: 0.4rem;
-    }
-
-    .perfil-info .subtitulo {
-      font-size: 0.88rem;
-      color: var(--verde-claro);
-      font-weight: 500;
-      margin-bottom: 1rem;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .tag {
-      background: var(--creme);
-      color: var(--texto-suave);
-      font-size: 0.75rem;
-      padding: 0.3rem 0.75rem;
-      border-radius: 2rem;
-      font-weight: 400;
-    }
-
-    /* ── DIVISOR ── */
-    .divisor {
-      border: none;
-      border-top: 1px solid var(--creme-escuro);
-      margin: 2rem 0;
-    }
-
-    /* ── SEÇÕES ── */
-    .secoes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    @media (max-width: 560px) {
-      .secoes { grid-template-columns: 1fr; }
-      .perfil-card { padding: 1.5rem; }
-      .perfil-info h1 { font-size: 1.4rem; }
-    }
-
-    .secao h2 {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--verde);
-      margin-bottom: 0.75rem;
-    }
-
-    .secao p, .secao li {
-      font-size: 0.92rem;
-      color: var(--texto-suave);
-      line-height: 1.7;
-    }
-
-    .secao ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .secao ul li::before {
-      content: '—';
-      color: var(--verde-claro);
-      margin-right: 0.5rem;
-      font-weight: 500;
-    }
-
-    /* ── APRESENTAÇÃO DESTAQUE ── */
-    .apresentacao {
-      background: var(--creme);
-      border-left: 3px solid var(--verde-claro);
-      border-radius: 0 0.75rem 0.75rem 0;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .apresentacao p {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: var(--texto);
-    }
-
-    /* ── INTERCAMBIO BADGE ── */
-    .intercambio-destaque {
-      background: var(--verde);
-      color: #fff;
-      border-radius: 0.75rem;
-      padding: 1rem 1.25rem;
-      font-size: 0.85rem;
-      line-height: 1.6;
-    }
-
-    .intercambio-destaque strong {
-      display: block;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      opacity: 0.75;
-      margin-bottom: 0.3rem;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.78rem;
-      color: var(--texto-suave);
-    }
-
-    /* ── ANIMAÇÃO ENTRADA ── */
-    @keyframes subir {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .perfil-card  { animation: subir 0.6s ease both; }
-    .apresentacao { animation: subir 0.6s 0.15s ease both; }
-    .secoes       { animation: subir 0.6s 0.25s ease both; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Fabricio — Perfil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <span class="badge">Perfil Pessoal</span>
-    </div>
-  </header>
+<header>
+    <div class="header-inner"><span class="badge">Perfil Pessoal</span></div>
+</header>
 
-  <main style="max-width:800px; margin:0 auto; padding: 0 1rem 3rem;">
-
-    <div class="perfil-card">
-
-      <!-- TOPO: foto + nome -->
-      <div class="perfil-topo">
-
-        <div class="foto-wrapper">
-          <!--
-            INSTRUÇÕES PARA ADICIONAR SUA FOTO:
-            1. Salve sua foto na mesma pasta que este arquivo, com o nome "foto.jpg"
-            2. Remova o bloco .foto-placeholder abaixo
-            3. Descomente a linha <img> abaixo
-          -->
-          <!-- <img src="foto.jpg" alt="Foto de Carlos Fabricio"> -->
-
-          <div class="foto-placeholder">👤</div>
-          <p class="foto-label">Adicionar foto.jpg</p>
+<main class="container">
+    <section class="perfil-card">
+        <div class="perfil-topo">
+            <div class="foto-wrapper">
+                <div class="foto-placeholder">👤</div>
+            </div>
+            <div class="perfil-info">
+                <h1>Carlos Fabricio<br>Benites Rodríguez</h1>
+                <p class="subtitulo">Engenharia Informática · UFOP / UNT</p>
+                <div class="tags">
+                    <span>Trujillo, PE</span><span>Ouro Preto, BR</span><span>2025</span>
+                </div>
+            </div>
         </div>
 
-        <div class="perfil-info">
-          <h1>Carlos Fabricio<br>Benites Rodríguez</h1>
-          <p class="subtitulo">Estudante de Engenharia Informática · 19 anos</p>
-          <div class="tags">
-            <span class="tag">Trujillo, Peru</span>
-            <span class="tag">Ouro Preto, Brasil</span>
-            <span class="tag">Intercâmbio 2025</span>
-          </div>
+        <div class="apresentacao">
+            <p>Sou estudante de <strong>Engenharia Informática</strong> na UNT (Peru), atualmente em intercâmbio na <strong>UFOP (Brasil)</strong>. Apaixonado por tecnologia e futebol, busco excelência em cada projeto.</p>
         </div>
 
-      </div>
-
-      <hr class="divisor"/>
-
-      <!-- APRESENTAÇÃO -->
-      <div class="apresentacao">
-        <p>
-          Olá! Sou Carlos Fabricio, tenho 19 anos e estou cursando <strong>Engenharia Informática</strong> 
-          na Universidad Nacional de Trujillo, no Peru. Sou uma pessoa muito apaixonada pelo que faço 
-          e busco sempre dar o meu melhor em tudo que me proponho. Além da tecnologia, tenho uma grande 
-          paixão pelo futebol, que faz parte do meu dia a dia.
-        </p>
-      </div>
-
-      <!-- SEÇÕES -->
-      <div class="secoes">
-
-        <div class="secao">
-          <h2>Formação</h2>
-          <ul>
-            <li>Engenharia Informática</li>
-            <li>Universidad Nacional de Trujillo</li>
-            <li>Trujillo, Peru</li>
-          </ul>
+        <div class="grid-secoes">
+            <div class="secao">
+                <h2>Formação</h2>
+                <p>UNT (Peru) / UFOP (Brasil)</p>
+            </div>
+            <div class="secao">
+                <h2>Interesses</h2>
+                <p>Programação · Cibersegurança · Futebol</p>
+            </div>
+            <div class="destaque-ufop">
+                <strong>Intercâmbio</strong>
+                <p>Um ano de imersão acadêmica e cultural na UFOP, MG.</p>
+            </div>
         </div>
+    </section>
+</main>
 
-        <div class="secao">
-          <h2>Interesses</h2>
-          <ul>
-            <li>Tecnologia e programação</li>
-            <li>Futebol</li>
-            <li>Intercâmbio cultural</li>
-          </ul>
-        </div>
-
-        <div class="secao" style="grid-column: 1 / -1;">
-          <h2>Intercâmbio</h2>
-          <div class="intercambio-destaque">
-            <strong>Atualmente</strong>
-            Realizando intercâmbio por um ano na <strong>Universidade Federal de Ouro Preto (UFOP)</strong>, 
-            em Minas Gerais, Brasil — uma experiência transformadora que amplia minha visão acadêmica e pessoal.
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </main>
-
-  <footer>
-    Carlos Fabricio Benites Rodríguez · UFOP · 2025
-  </footer>
+<footer>Carlos Fabricio · 2026</footer>
 
 </body>
 </html>
