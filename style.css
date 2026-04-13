@@ -1,176 +1,201 @@
-/* --- VARIABLES DE DISEÑO --- */
+/* --- VARIABLES DE DISEÑO (Colores con nombre) --- */
 :root {
-    --verde: #1a6b4a;      /* Verde institucional/profesional */
-    --verde-claro: #2d9967;
-    --creme: #f7f3ed;      /* Fondo suave para que no canse la vista */
-    --texto: #1c1c1c;      /* Casi negro para buen contraste */
-    --blanco: #ffffff;
+    --color-principal: black;
+    --color-secundario: dimgray;
+    --fondo-pagina: whitesmoke;
+    --texto-oscuro: black;
+    --texto-suave: gray;
+    --blanco-puro: white;
 }
 
 /* --- ESTILOS BASE --- */
 body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--creme);
-    color: var(--texto);
-    margin: 0;
-    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fondo-pagina);
+    color: var(--texto-oscuro);
+    margin: 0;
+    line-height: 1.6;
 }
 
 /* --- HEADER --- */
 header {
-    background: var(--verde);
-    padding: 3rem 1rem 6rem; /* Mucho espacio abajo para que la tarjeta pise el fondo */
-    text-align: center;
+    background: var(--color-principal);
+    padding: 3rem 1rem 6rem;
+    text-align: center;
 }
 
 .badge {
-    background: rgba(255,255,255,0.2); /* Blanco transparente */
-    color: white;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px; /* Espacio entre letras */
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* --- CONTENEDOR Y TARJETA --- */
 .container {
-    max-width: 700px;
-    margin: -4rem auto 2rem; /* El margen negativo sube la tarjeta sobre el header */
-    padding: 0 1rem;
+    max-width: 700px;
+    margin: -4rem auto 2rem;
+    padding: 0 1rem;
 }
 
 .perfil-card {
-    background: var(--blanco);
-    padding: 2.5rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08); /* Sombra elegante */
+    background: var(--blanco-puro);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* --- CABECERA DE PERFIL (FLEXBOX) --- */
+/* --- CABECERA DE PERFIL --- */
 .perfil-topo {
-    display: flex;         /* Alinea foto y texto en fila */
-    gap: 2rem;             /* Separación entre foto y texto */
-    align-items: center;   /* Centra verticalmente */
-    flex-wrap: wrap;       /* Si no hay espacio, se pone uno bajo el otro */
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .foto-placeholder {
-    width: 110px;
-    height: 110px;
-    background: var(--creme);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    border-radius: 1.2rem;
-    border: 3px solid var(--creme);
+    width: 110px;
+    height: 110px;
+    background: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border-radius: 1.2rem;
+    border: 3px solid lightgray;
 }
 
 h1 {
-    font-family: 'Playfair Display', serif; /* Fuente elegante con remates */
-    font-size: 1.7rem;
-    margin: 0 0 0.5rem 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    margin: 0 0 0.5rem 0;
 }
 
 .subtitulo {
-    color: var(--verde-claro);
-    font-weight: 500;
-    margin-bottom: 1rem;
+    color: var(--color-secundario);
+    font-weight: 500;
+    margin-bottom: 1rem;
 }
 
 .tags span {
-    background: var(--creme);
-    font-size: 0.75rem;
-    padding: 5px 12px;
-    border-radius: 30px;
-    margin-right: 8px;
-    color: #555;
+    background: whitesmoke;
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    border-radius: 30px;
+    margin-right: 8px;
+    color: var(--texto-suave);
 }
 
-/* --- SECCIONES INTERNAS --- */
+/* --- SECCIÓN PRESENTACIÓN --- */
 .apresentacao {
-    margin: 2.5rem 0;
-    padding: 1.2rem 1.5rem;
-    border-left: 5px solid var(--verde-claro); /* Línea decorativa izquierda */
-    background: #fcfcfc;
+    margin: 2.5rem 0;
+    padding: 1.2rem 1.5rem;
+    border-left: 5px solid black;
+    background: white;
 }
 
-/* CUADRÍCULA (GRID) */
+.apresentacao p {
+    margin-bottom: 1rem;
+}
+
+/* --- CUADRÍCULA (GRID) --- */
 .grid-secoes {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
 }
 
 .secao h2 {
-    font-size: 0.8rem;
-    color: var(--verde);
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
 }
 
-/* Bloque destacado que ocupa el ancho total */
-.destaque-ufop {
-    grid-column: 1 / -1; /* Se estira de la columna 1 hasta el final */
-    background: var(--verde);
-    color: white;
-    padding: 1.5rem;
-    border-radius: 1rem;
+.secao p {
+    font-size: 0.95rem;
+    color: var(--texto-suave);
 }
 
-.destaque-ufop strong {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-}
-
-/* --- PIE DE PÁGINA --- */
-footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.8rem;
-    color: #888;
-}
-
+/* --- SECCIÓN DE LOGOS (CORREGIDA) --- */
 .secao-logos {
-    grid-column: 1 / -1; /* Ocupa todo el ancho */
-    margin-top: 1rem;
-    text-align: center;
+    grid-column: 1 / -1; /* Ocupa todo el ancho para no deformar las columnas de arriba */
+    text-align: center;
+    margin: 1.5rem 0;
+    border-top: 1px solid lightgray;
+    padding-top: 1.5rem;
 }
 
 .logos-container {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    align-items: center;
-    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    align-items: center;
 }
 
-.logo-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+.logo-item a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: black;
+    transition: transform 0.3s;
+}
+
+.logo-item a:hover {
+    transform: scale(1.05);
 }
 
 .logo-item img {
-    height: 60px; /* Ajusta la altura según los logos */
-    width: auto;
-    filter: grayscale(100%); /* Opcional: los hace blanco y negro para que combinen */
-    transition: 0.3s;
-    opacity: 0.8;
-}
-
-.logo-item img:hover {
-    filter: grayscale(0%); /* Vuelven a color al pasar el mouse */
-    opacity: 1;
-    transform: scale(1.1);
+    height: 50px; /* Tamaño controlado para evitar desproporción */
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.8;
 }
 
 .logo-item span {
-    font-size: 0.7rem;
-    font-weight: bold;
-    color: var(--verde);
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* --- CUADRO DESTAQUE --- */
+.destaque-ufop {
+    grid-column: 1 / -1;
+    background: black;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+}
+
+.destaque-ufop strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: darkgray;
+}
+
+/* --- RESPONSIVE (Ajuste para celulares) --- */
+@media (max-width: 600px) {
+    .grid-secoes {
+        grid-template-columns: 1fr;
+    }
+    .perfil-topo {
+        flex-direction: column;
+        text-align: center;
+    }
 }
