@@ -159,3 +159,60 @@ footer {
     font-size: 0.8rem;
     color: #888;
 }
+
+/* --- SEÇÃO DE LOGOS (ACOPLADA) --- */
+.secao-logos {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 1.5rem 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--creme);
+}
+
+.secao-logos h2 {
+    font-size: 0.75rem;
+    color: var(--verde-claro);
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.logo-item a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.logo-item a:hover {
+    transform: translateY(-3px);
+}
+
+.logo-item img {
+    height: 45px; /* Tamaño optimizado */
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.logo-item a:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.logo-item span {
+    font-size: 0.65rem;
+    font-weight: bold;
+    color: var(--texto);
+    text-transform: uppercase;
+}
