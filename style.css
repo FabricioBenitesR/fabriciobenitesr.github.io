@@ -216,3 +216,17 @@ footer {
     color: var(--texto);
     text-transform: uppercase;
 }
+.foto-wrapper {
+    width: 110px;
+    height: 110px;
+    border-radius: 1.2rem; /* O 50% para circular */
+    overflow: hidden; /* Importante para recortar la foto */
+    border: 3px solid var(--creme);
+    flex-shrink: 0;
+}
+
+.foto-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la foto sin deformarla */
+}
