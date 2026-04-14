@@ -216,17 +216,20 @@ footer {
     color: var(--texto);
     text-transform: uppercase;
 }
+/* Asegura que el contenedor tenga el tamaño y forma correctos */
 .foto-wrapper {
     width: 110px;
     height: 110px;
-    border-radius: 1.2rem; /* O 50% para circular */
-    overflow: hidden; /* Importante para recortar la foto */
+    border-radius: 1.2rem; /* Bordes redondeados elegantes */
+    overflow: hidden; /* Importante: recorta la foto para que no se salga del borde */
     border: 3px solid var(--creme);
     flex-shrink: 0;
 }
 
+/* Controla cómo se ajusta la imagen DENTRO del contenedor */
 .foto-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la foto sin deformarla */
+    object-fit: cover; /* Recorta y ajusta la foto sin deformarla */
+    display: block;
 }
